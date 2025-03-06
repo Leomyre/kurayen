@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Download, Github, Linkedin, Mail, Twitter } from "lucide-react"
+import { Download, Github, Facebook, Mail, Phone} from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import CharacterTraits from "./components/character-traits"
@@ -71,20 +71,32 @@ export default function Page() {
                   </p>
                 </div>
               </div>
-              <div className="space-x-4 ">
-                <Link href="https://github.com/Leomyre" target="_blank">
-                  <Button variant="outline" size="icon" className="border-neonBlue text-neonBlue hover:bg-neonBlue/10">
-                    <Github className="h-4 w-4" />
-                    <span className="sr-only">GitHub</span>
-                  </Button>
-                </Link>
-                <Link href="mailto:ghleomyre@gmail.com">
-                  <Button variant="outline" size="icon" className="border-neonBlue text-neonBlue hover:bg-neonBlue/10">
-                    <Mail className="h-4 w-4" />
-                    <span className="sr-only">Email</span>
-                  </Button>
-                </Link>
-              </div>
+              <div className="space-x-4">
+      <Link href="https://github.com/Leomyre" target="_blank">
+        <Button variant="outline" size="icon" className="border-neonBlue text-neonBlue hover:bg-neonBlue/10">
+          <Github className="h-4 w-4" />
+          <span className="sr-only">GitHub</span>
+        </Button>
+      </Link>
+      <Link href="mailto:ghleomyre@gmail.com">
+        <Button variant="outline" size="icon" className="border-neonBlue text-neonBlue hover:bg-neonBlue/10">
+          <Mail className="h-4 w-4" />
+          <span className="sr-only">Email</span>
+        </Button>
+      </Link>
+      <Link href="https://wa.me/33385807810" target="_blank">
+        <Button variant="outline" size="icon" className="border-neonBlue text-neonBlue hover:bg-neonBlue/10">
+          <Phone className="h-4 w-4" />
+          <span className="sr-only">WhatsApp</span>
+        </Button>
+      </Link>
+      <Link href="https://facebook.com/YourFacebookUsername" target="_blank">
+        <Button variant="outline" size="icon" className="border-neonBlue text-neonBlue hover:bg-neonBlue/10">
+          <Facebook className="h-4 w-4" />
+          <span className="sr-only">Facebook</span>
+        </Button>
+      </Link>
+    </div>
             </div>
           </div>
         </section>
