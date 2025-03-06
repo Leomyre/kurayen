@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 4%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 4%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 350 100% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 100% 40%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 210 100% 40%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 350 100% 50%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .neon-text {
+    @apply text-neonRed;
+    @apply animate-glow;
+  }
+
+  .neon-border {
+    @apply border-neonRed;
+    @apply shadow-neon;
+  }
+
+  .neon-button {
+    @apply bg-neonRed;
+    @apply hover:bg-neonRed/90;
+    @apply shadow-neon;
+    @apply transition-all;
+    @apply duration-300;
+  }
+
+  .blue-accent {
+    @apply text-neonBlue;
+  }
+
+  /* Animation for skill bars */
+  @keyframes skillBarAnimation {
+    0% {
+      width: 0%;
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .skill-bar {
+    animation: skillBarAnimation 1.5s ease-out forwards;
+  }
+}
+
