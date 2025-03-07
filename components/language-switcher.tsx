@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { useLanguage } from "../context/language-context"
+import { useLanguage } from "@/context/language-context"
 
 interface LanguageSwitcherProps {
   className?: string
