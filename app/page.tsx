@@ -256,7 +256,7 @@ export default function Page() {
       <footer className="border-t border-border bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/40 relative z-10">
         <div className="container flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6">
           <p className="text-xs text-gray-400">
-            © 2024 <span className="neon-text">Léomyre</span>. {t("footer.rights")}
+            © 2025 <span className="neon-text">Léomyre</span>. {t("footer.rights")}
           </p>
           <nav className="sm:ml-auto flex gap-4 sm:gap-6">
             <Link className="text-xs hover:text-neonRed" href="#">
