@@ -126,7 +126,7 @@ export default function Page() {
             <Button
               variant="outline"
               className="border-neonRed text-neonRed hover:bg-neonRed/10"
-              onClick={() => window.open("/cv.pdf", "_blank")}
+              onClick={() => window.open("/Leomyre_cv.pdf", "_blank")}
             >
               <Download className="mr-2 h-4 w-4" />
               {t("button.downloadCV")}
