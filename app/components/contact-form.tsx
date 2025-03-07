@@ -7,7 +7,11 @@ import { Textarea } from "@/components/ui/textarea"
 import { useState } from "react"
 import { submitContactForm } from "../actions"
 
-export default function ContactForm() {
+interface ContactFormProps {
+  t?: (key: string) => string
+}
+
+export default function ContactForm({ t = (key) => key }: ContactFormProps) {
   const [pending, setPending] = useState(false)
   const [message, setMessage] = useState("")
 
@@ -17,7 +21,7 @@ export default function ContactForm() {
       const response = await submitContactForm(formData)
       setMessage(response.message)
     } catch (error) {
-      setMessage("Something went wrong. Please try again.")
+      setMessage(t("contact.error"))
     } finally {
       setPending(false)
     }
@@ -28,19 +32,19 @@ export default function ContactForm() {
       <form action={handleSubmit} className="space-y-4">
         <div>
           <label htmlFor="name" className="block text-sm font-medium mb-2 text-neonBlue">
-            Name
+            {t("contact.name")}
           </label>
           <Input id="name" name="name" required className="bg-muted border-border" />
         </div>
         <div>
           <label htmlFor="email" className="block text-sm font-medium mb-2 text-neonBlue">
-            Email
+            {t("contact.email")}
           </label>
           <Input id="email" name="email" type="email" required className="bg-muted border-border" />
         </div>
         <div>
           <label htmlFor="message" className="block text-sm font-medium mb-2 text-neonBlue">
-            Message
+            {t("contact.message")}
           </label>
           <Textarea id="message" name="message" required className="bg-muted border-border" />
         </div>
@@ -49,7 +53,7 @@ export default function ContactForm() {
           className="w-full bg-neonRed hover:bg-neonRed/90 shadow-neon transition-all duration-300"
           disabled={pending}
         >
-          {pending ? "Sending..." : "Send Message"}
+          {pending ? t("contact.sending") : t("contact.send")}
         </Button>
         {message && <p className="text-sm text-center mt-4 text-gray-400">{message}</p>}
       </form>
